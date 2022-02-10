@@ -7,13 +7,19 @@ namespace BindingIssueMVVM.Controls
 {
     public class DummyCustomControl : Control
     {
-        public ADummyClass ADummyInstance { get; set; }
+        public ADummyClass ADummyInstance
+        {
+            get => _aDummyInstance;
+            set => SetAndRaise(ADummyInstanceProperty, ref _aDummyInstance, value);
+        }
 
         public static readonly DirectProperty<DummyCustomControl, ADummyClass> ADummyInstanceProperty =
             AvaloniaProperty.RegisterDirect<DummyCustomControl, ADummyClass>(
                 nameof(DummyCustomControl), o => o.ADummyInstance,
                 (o, v) => o.ADummyInstance = v);
-        
+
+        private ADummyClass _aDummyInstance;
+
         public DummyCustomControl()
         {
             ADummyInstance = new ADummyClass();

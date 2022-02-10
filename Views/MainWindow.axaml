@@ -14,7 +14,7 @@
     </Design.DataContext>
 
     <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
-        <controls:DummyCustomControl ADummyInstance="{Binding DummyInstance, Mode=TwoWay}" 
+        <controls:DummyCustomControl ADummyInstance="{Binding DummyInstance, Mode=OneWayToSource}" 
                                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                                      Height="300"/>
 
